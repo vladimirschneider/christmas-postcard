@@ -25,21 +25,7 @@ Api.getUserPostCard(shortcut).then(
         const audioElement = new Audio(`https://christmas-postcard.com/${json.postcard.song.sound}`);
 
         btnPlayAudio.addEventListener('click', () => {
-          if (isPlay) {
-            audioElement.pause();
-            audioElement.loop = false;
-
-            isPlay = false;
-
-            btnPlayAudio.innerHTML = 'Воспроизвести';
-          } else {
-            audioElement.play();
-            audioElement.loop = true;
-
-            isPlay = true;
-
-            btnPlayAudio.innerHTML = 'Пауза';
-          }
+          playMusic();
         });
 
         Api.getMe().then(function(result) {
