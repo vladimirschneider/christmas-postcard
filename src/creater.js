@@ -180,17 +180,17 @@ Api.getSongs().then(
       const btnsChoiseSong = document.querySelectorAll('[data-songchoise]');
 
       btnsChoiseSong.forEach(
-          (btnChoiseSong) => {
-            btnChoiseSong.addEventListener('click', () => {
+          (btnChoiceSong) => {
+            btnChoiceSong.addEventListener('click', () => {
               btnsChoiseSong.forEach(
-                  (btnChoiseSong) => {
-                    btnChoiseSong.classList.remove('song_btn_choised');
+                  (btnChoiceSong) => {
+                    btnChoiceSong.classList.remove('song_btn_choised');
                   }
               );
 
-              btnChoiseSong.classList.add('song_btn_choised');
+              btnChoiceSong.classList.add('song_btn_choised');
 
-              const songID = +btnChoiseSong.dataset.songchoise;
+              const songID = +btnChoiceSong.dataset.songchoise;
 
               Api.userUpdate('song_id', songID);
             });
